@@ -74,7 +74,8 @@ public class SecondActivity extends AppCompatActivity {
             fileInputStream = new FileInputStream(myFile);
             int read = -1;
             StringBuffer stringBuffer = new StringBuffer();
-            while((read=fileInputStream.read()) == -1){
+            //changed the condition from == to !=
+            while((read=fileInputStream.read()) != -1){
                 stringBuffer.append((char)read);
             }
             return stringBuffer.toString();
